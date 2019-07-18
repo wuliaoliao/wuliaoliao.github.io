@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html lang xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Hexo</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="John Doe">
+<meta name="description" content="A Blog Powered By Hexo">
+<meta name="keywords" content>
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?33605088">
+
+<script src="/js/loadCSS.js"></script>
+<script>
+    loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
+    (function (d) {
+        var config = {
+                kitId: 'dwg1tuc',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h = d.documentElement, t = setTimeout(function () {
+                h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+            }, config.scriptTimeout), tk = d.createElement("script"), f = false,
+            s = d.getElementsByTagName("script")[0], a;
+        h.className += " wf-loading";
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+            a = this.readyState;
+            if (f || a && a != "complete" && a != "loaded") return;
+            f = true;
+            clearTimeout(t);
+            try {
+                Typekit.load(config)
+            } catch (e) {
+            }
+        };
+        s.parentNode.insertBefore(tk, s)
+    })(document);
+</script>
+<noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+</noscript>
+</head>
+<body>
+<div id="top"></div>
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer" v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item active" href="http://yoursite.com">
+                Home
+            </a>
+            <a class="a-block drawer-menu-item false" href="/archives">
+                Archive
+            </a>
+
+            
+            
+
+            
+            <a class="a-block drawer-menu-item" href="/atom.xml">
+                RSS
+            </a>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Hexo
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead" v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Hexo</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head active" href="/">
+        <div class="nav-title">
+            吴思乱想
+        </div>
+        <div class="nav-subtitle">
+            尚未佩妥剑，<br>转眼便江湖。<br>愿历尽千帆，<br>归来仍少年。
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        <a class="a-block no-tint nav-link-item" href="http://yoursite.com">
+            Home
+        </a>
+        <a class="a-block no-tint nav-link-item false" href="/archives">
+            Archive
+        </a>
+
+        
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        powered by Hexo<br>
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a><br>
+        
+        &copy; 2019 <a href="http://yoursite.com">Hexo</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+        
+
+        
+
+        
+        
+    </div>
+</div>
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-no-background">
+        
+        <a href="/2019/07/18/hello-world/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Hello World
+                        </div>
+                        <div class="post-item-summary">
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Qu...
+                        </div>
+                        <div class="post-item-meta">
+                            2019-07-18
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+        <a href="/2019/05/20/20190520-时间随想/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            20190520_时间随想
+                        </div>
+                        <div class="post-item-summary">
+                            18号满的28岁。
+时间过得越来越快，每天期盼的事，便是了了早日到来。可这小家伙就在肚子里磨蹭着不肯出来。
+往后的时光，应该是会越过越快了。随着年龄的增长，每一天、每个月、甚至每一年都变得越来越短。
+你1岁时，一个月是你生命的12分之一。
+你12岁时，一个月仅仅是你生命的144分之一，一年才是你生命的12分之一。此时的一年，如同1岁时的一个月。
+你24岁时，产生同样的时光记忆占比，你需要两年。
+
+                        </div>
+                        <div class="post-item-meta">
+                            2019-05-20
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+        <a href="/2019/05/13/教育孩子的准则-家训/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            教育孩子的准则--家训
+                        </div>
+                        <div class="post-item-summary">
+                            此训由《弟子规》修订改编而来，作为家里教育孩子的行为准则。
+
+
+
+
+
+
+
+                        </div>
+                        <div class="post-item-meta">
+                            2019-05-13
+                        </div>
+                    </div>
+                    
+                    <div class="post-item-image-wrapper">
+                        <div class="post-item-image" style="background-image: url('/2019/05/13/教育孩子的准则-家训/0001.jpg')"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+        <a href="/2019/05/04/写与不写，看与不看/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            写与不写，看与不看
+                        </div>
+                        <div class="post-item-summary">
+                              写作究竟是为了写而写吗？学习写作技巧，教我们如何把一个观念、一句话几十字能讲清楚的道理，从不同维度用几千或上万字展开来论证、说明其正确性。  这样的写作，其实关注的不是要说明的结果（观点），而是如何说服他人的过程——证明结果（观点）的正确性、说服他人接受？  那么，普遍被认可的观点，将其展开写作就显得毫无价值。  因为这类观点，无需你论证，别人也信了。而非通过你的努力让他人了解了新的观点...
+                        </div>
+                        <div class="post-item-meta">
+                            2019-05-04
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+        <a href="/2019/05/04/关于挫折/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            关于挫折
+                        </div>
+                        <div class="post-item-summary">
+                            不怕失败，勇于尝试。并不仅仅是在大事上，小事中也需要发挥这种精神。例如，在各类的人际交往中，主动结交牛人时，践行某些美德时，等等亦是如此。在小事中的失败尝试，通常不会带来严重的后果。也许，仅仅只是尴尬的局面。
+但也正因如此，在所谓的小事中的勇于尝试，并没有引起足够的重视。我们会以避免尴尬为借口，忽略在一些小事中的尝试，即便自身认为很有必要的情况下。
+厉害的人，往往都容易克服这些因素而去尝试，...
+                        </div>
+                        <div class="post-item-meta">
+                            2019-05-04
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+        <a href="/2019/04/22/逻辑的欺骗性/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            逻辑的欺骗性
+                        </div>
+                        <div class="post-item-summary">
+                            春秋时期一个叫邓析的人（据说是历史上律师的鼻祖）教人打官司的故事。郑国有个富人的父亲不小心掉河里淹死了，被一个人渔夫打捞了上来，渔夫向富人要了极高的价格卖给他尸体，富人很不满便去找邓析寻求解决办法，邓析告诉他：“不着急，他除了卖给你，还能卖给谁呢？”富者依计行事。过了几日，渔夫着急了，尸体腐烂发臭，他也去找邓析寻求意见，邓析告诉他：“不着急，他除了到你这儿买，还能到哪儿呢？”最后尸体烂在路边...
+                        </div>
+                        <div class="post-item-meta">
+                            2019-04-22
+                        </div>
+                    </div>
+                    
+                    <div class="post-item-image-wrapper">
+                        <div class="post-item-image" style="background-image: url('/2019/04/22/逻辑的欺骗性/logic.jpg')"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+        <a href="/2019/04/16/20190416/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            20190416
+                        </div>
+                        <div class="post-item-summary">
+                            
+中国中小企业的平均寿命是2.5年，集团企业的平均寿命是7-8年。这些中小企业提供了中国80%的城镇居民就业。
+公开的力量，人是社会化的动物，极其在意外部评价。
+审美常常并不需要知道原理，但创造美的人必须有方法论，否则不可能持续创造。
+人偏爱有序，讨厌无序，有序就是逻辑，无序就是混乱。
+每个人都没法拒绝自己真实的快乐。你不厌其烦的地方，就是你的天分所在。这些东西持续给你满足感，你可以一直花时...
+                        </div>
+                        <div class="post-item-meta">
+                            2019-04-16
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+        <a href="/2019/04/10/20190410-读查理-芒格摘抄/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-divider">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            20190410 读查理.芒格摘抄
+                        </div>
+                        <div class="post-item-summary">
+                            
+通过阅读和“已逝的伟人”交朋友，这听起来很好玩，单如果你确实在生活中与“已逝的伟人”成为朋友，那么我认为你会过上更好的生活，得到更好的教育。
+在手里拿着一把锤子的人眼中，世界就像一根钉子。大多人试图以一种思维模型来解决问题，而其思维往往只来自某一专业学科。
+如果你想获得你要的东西，那就让自己配得上它。信任、成功和钦佩都是靠努力获得的。
+真正重要的思想占了每个大学科的95%，所以，从大学科中...
+                        </div>
+                        <div class="post-item-meta">
+                            2019-04-10
+                        </div>
+                    </div>
+                    
+                    <div class="post-item-image-wrapper">
+                        <div class="post-item-image" style="background-image: url('/2019/04/10/20190410-读查理-芒格摘抄/loveyourlife.jpeg')"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </a>
+        
+    
+        
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a><br>
+    &copy; 2019 <a href="http://yoursite.com">Hexo</a>
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js" integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
+<script src="/js/journal.js?11315815"></script>
+</body>
+</html>
